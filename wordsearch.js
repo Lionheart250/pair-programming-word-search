@@ -1,8 +1,11 @@
 const wordSearch = (letters, word) => { 
     const horizontalJoin = letters.map(ls => ls.join(''))
-    for (l of horizontalJoin) {
-        if (l.includes(word)) return true
+    const lowerCaseWord = word.toLowerCase();
+
+    for (let l of horizontalJoin) {
+        if (l.toLowerCase().includes(lowerCaseWord)) return true
     }
-}
+    return false;
+};
 
 module.exports = wordSearch
